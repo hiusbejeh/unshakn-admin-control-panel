@@ -27,9 +27,9 @@ const ProductPage = () => {
     return null;
   }
   
-  // Get average rating
+  // Get average rating - fixed to properly access rating property from each Rating object
   const averageRating = product.ratings.length > 0
-    ? product.ratings.reduce((sum, rating) => sum + rating, 0) / product.ratings.length
+    ? product.ratings.reduce((sum, ratingObj) => sum + ratingObj.rating, 0) / product.ratings.length
     : 0;
   
   const handleAddToCart = () => {
